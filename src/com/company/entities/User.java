@@ -3,18 +3,28 @@ package com.company.entities;
 public class User {
     private String name;
     private double money;
-    private String type_Of_Fuel;
+    private String fuel;
+    private int quantity;
 
-    public User(String name, double money, String type_Of_Fuel) {
+    public User(String name, double money, String fuel, int quantity) {
         this.name = name;
         this.money = money;
-        this.type_Of_Fuel = type_Of_Fuel;
+        this.fuel = fuel;
+        this.quantity = quantity;
     }
-
+    
     public User() {
 
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+    
     public double getMoney() {
         return money;
     }
@@ -23,12 +33,12 @@ public class User {
         this.money = money;
     }
 
-    public String getType_Of_Fuel() {
-        return type_Of_Fuel;
+    public String getFuel() {
+        return fuel;
     }
 
-    public void setType_Of_Fuel(String type_Of_Fuel) {
-        this.type_Of_Fuel = type_Of_Fuel;
+    public void setFuel(String fuel) {
+        this.fuel = fuel;
     }
 
     public String getName() {

@@ -1,27 +1,32 @@
 package com.company.entities;
 
 public class Fuel {
-    private String name;
-    private double fuelQuantity;
+    private TypeOfFuel type;
+    private int quantity;
 
-    public Fuel(String name, double fuelQuantity) {
-        this.name = name;
-        this.fuelQuantity = fuelQuantity;
+    public Fuel(TypeOfFuel type, int quantity) {
+        this.type = type;
+        this.quantity = quantity;
     }
 
-    public String getName() {
-        return name;
+    public TypeOfFuel getType() {
+        return type;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setType(TypeOfFuel type) {
+        this.type = type;
     }
 
-    public double getFuelQuantity() {
-        return fuelQuantity;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setFuelQuantity(double fuelQuantity) {
-        this.fuelQuantity = fuelQuantity;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s - %d", type, quantity);
     }
 }

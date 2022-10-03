@@ -1,31 +1,38 @@
 package com.company.entities;
 
-import com.company.entities.Fuel;
-
 import java.util.ArrayList;
+import java.util.List;
 
+/**
+ * Заправка
+ */
 public class Station {
-    private int numberOfStation;
-    private ArrayList<Fuel> listOfFuel = new ArrayList<Fuel>();
+    private String name;
+    private List<Post> posts;
 
-    public Station(int numberOfStation, ArrayList<Fuel> listOfFuel) {
-        this.numberOfStation = numberOfStation;
-        this.listOfFuel = listOfFuel;
+    public Station(String name, List<Post> posts) {
+        this.name = name;
+        this.posts = posts;
     }
 
-    public int getNumberOfStation() {
-        return numberOfStation;
+    public List<Post> filter(User userRequest) {
+        // userRequest.getFuel() && userRequest.getQuantity()
+        return null;
     }
 
-    public void setNumberOfStation(int numberOfStation) {
-        this.numberOfStation = numberOfStation;
+    public String getName() {
+        return name;
     }
 
-    public ArrayList<Fuel> getListOfFuel() {
-        return listOfFuel;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setListOfFuel(ArrayList<Fuel> listOfFuel) {
-        this.listOfFuel = listOfFuel;
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
     }
 }
