@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.commands.Creator;
 import com.company.entities.Post;
 import com.company.entities.Station;
 import com.company.entities.User;
@@ -12,10 +13,12 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        List<Post> posts = List.of(); // todo
+        List<Post> posts = Creator.createPosts(4); // todo
         Station wogStation = new Station("WOG", posts);
         
         while (true) {
+            System.out.println("_________________________________");
+            posts.forEach(post -> System.out.println(post));
             User user = new User();
             System.out.println("Введите имя юзера");
             user.setName(scanner.next());

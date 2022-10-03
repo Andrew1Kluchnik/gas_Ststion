@@ -29,4 +29,12 @@ public class Post {
     public void setFuels(List<Fuel> fuels) {
         this.fuels = fuels;
     }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "number=" + number +
+                ", fuels=" + fuels +
+                '}';
+    }
 }

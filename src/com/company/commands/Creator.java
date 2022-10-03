@@ -9,35 +9,25 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Creator {
-    static Scanner scanner = new Scanner(System.in);
-    private static byte count = 0;
 
-    public static double getDouble() {
-        return scanner.nextDouble();
-    }
-
-    public static String getString() {
-        return scanner.next();
-    }
-
-    public static List<Post> createstations() {
-        ArrayList<Post> listPost = new ArrayList<Post>();
-        for (int i = 0; i < 10; i++) {
-            Post post1 = new Post(i, createFuel());
+    public static List<Post> createPosts(int count) {
+        List<Post> listPost = new ArrayList<Post>();
+        for (int i = 0; i < count; i++) {
+            Post post1 = new Post(i, createFuel(i));
             listPost.add(post1);
         }
         return listPost;
     }
 
-    private static ArrayList<Fuel> createFuel() {
+    private static ArrayList<Fuel> createFuel(int n) {
         ArrayList<Fuel> fuels = new ArrayList<>();
-        if (count < 8) {
-            fuels.add(new Fuel(TypeOfFuel.BENZ, 1000));
-            fuels.add(new Fuel(TypeOfFuel.DIESEL, 1000));
-            fuels.add(new Fuel(TypeOfFuel.GAS, 1000));
+        if (n % 2 == 0) {
+            fuels.add(new Fuel(TypeOfFuel.BENZ, 10));
+            fuels.add(new Fuel(TypeOfFuel.DIESEL, 20));
+            fuels.add(new Fuel(TypeOfFuel.GAS, 30));
         } else {
-            fuels.add(new Fuel(TypeOfFuel.BENZ, 1000));
-            fuels.add(new Fuel(TypeOfFuel.DIESEL, 1000));
+            fuels.add(new Fuel(TypeOfFuel.BENZ, 15));
+            fuels.add(new Fuel(TypeOfFuel.DIESEL, 10));
         }
         return fuels;
     }

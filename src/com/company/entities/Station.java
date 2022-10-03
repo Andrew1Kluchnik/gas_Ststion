@@ -17,7 +17,14 @@ public class Station {
 
     public List<Post> filter(User userRequest) {
         // userRequest.getFuel() && userRequest.getQuantity()
-        return null;
+        List<Post> result = new ArrayList<>();
+        for (Post post : posts) {
+            if (post.getFuels().stream().anyMatch(fuel -> fuel.getType().name().equals(userRequest.getFuel())
+                    && fuel.getQuantity() >= userRequest.getQuantity())) {
+                result.add(post);
+            }
+        }
+        return result;
     }
 
     public String getName() {
