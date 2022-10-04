@@ -27,17 +27,17 @@ public class Station {
         return result;
     }
 
-    public List<Post> refueling(User userRequest) {
+    public int refueling(User userRequest) {
+        int cost = 0;
         Post post = posts.get(userRequest.getPost());
         List<Fuel> fuels = post.getFuels();
         for (Fuel fuel1 : fuels) {
             if (fuel1.getType().name().equals(userRequest.getFuel())) {
                 fuel1.setQuantity(fuel1.getQuantity() - userRequest.getQuantity());
+                cost = fuel1.getCost()*userRequest.getQuantity();
             }
         }
-        post.setFuels(fuels);
-        posts.set(userRequest.getPost(), post);
-        return posts;
+        return cost;
     }
 
     public String getName() {

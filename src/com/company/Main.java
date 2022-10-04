@@ -34,8 +34,8 @@ public class Main {
             filteredPosts.forEach(post -> System.out.println(post));
             System.out.println("На какую колонку поедешь?");
             user.setPost(scanner.nextByte());
-            posts = wogStation.refueling(user);
-            System.out.println("Спасибо за заправку!");
+            int cost = wogStation.refueling(user);
+            System.out.println("Спасибо за заправку, вы заправились на: " + cost);
         }
 
     }
