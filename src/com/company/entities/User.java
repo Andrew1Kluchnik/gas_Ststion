@@ -5,14 +5,16 @@ public class User {
     private double money;
     private String fuel;
     private int quantity;
+    private byte post;
 
-    public User(String name, double money, String fuel, int quantity) {
+    public User(String name, double money, String fuel, int quantity, byte post) {
         this.name = name;
         this.money = money;
         this.fuel = fuel;
         this.quantity = quantity;
+        this.post = post;
     }
-    
+
     public User() {
 
     }
@@ -24,7 +26,7 @@ public class User {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    
+
     public double getMoney() {
         return money;
     }
@@ -48,4 +50,8 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
+
+    public byte getPost() {return post;}
+
+    public void setPost(byte post) {this.post = post;}
 }

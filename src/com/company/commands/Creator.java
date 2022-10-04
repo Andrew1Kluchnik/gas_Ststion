@@ -1,5 +1,6 @@
 package com.company.commands;
 
+import com.company.Constants;
 import com.company.entities.Fuel;
 import com.company.entities.Post;
 import com.company.entities.TypeOfFuel;
@@ -22,12 +23,12 @@ public class Creator {
     private static ArrayList<Fuel> createFuel(int n) {
         ArrayList<Fuel> fuels = new ArrayList<>();
         if (n % 2 == 0) {
-            fuels.add(new Fuel(TypeOfFuel.BENZ, 10));
-            fuels.add(new Fuel(TypeOfFuel.DIESEL, 20));
-            fuels.add(new Fuel(TypeOfFuel.GAS, 30));
+            fuels.add(new Fuel(TypeOfFuel.BENZ, 10, Constants.BENZ_COST));
+            fuels.add(new Fuel(TypeOfFuel.DIESEL, 20, Constants.DIESEL_COST));
+            fuels.add(new Fuel(TypeOfFuel.GAS, 30, Constants.GAS_COST));
         } else {
-            fuels.add(new Fuel(TypeOfFuel.BENZ, 15));
-            fuels.add(new Fuel(TypeOfFuel.DIESEL, 10));
+            fuels.add(new Fuel(TypeOfFuel.BENZ, 15, Constants.BENZ_COST));
+            fuels.add(new Fuel(TypeOfFuel.DIESEL, 10, Constants.DIESEL_COST));
         }
         return fuels;
     }

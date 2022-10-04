@@ -3,10 +3,12 @@ package com.company.entities;
 public class Fuel {
     private TypeOfFuel type;
     private int quantity;
+    private int cost;
 
-    public Fuel(TypeOfFuel type, int quantity) {
+    public Fuel(TypeOfFuel type, int quantity, int cost) {
         this.type = type;
         this.quantity = quantity;
+        this.cost = cost;
     }
 
     public TypeOfFuel getType() {
@@ -25,8 +27,16 @@ public class Fuel {
         this.quantity = quantity;
     }
 
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
+
     @Override
     public String toString() {
-        return String.format("%s - %d", type, quantity);
+        return String.format("%s - %d", type, quantity, cost);
     }
 }

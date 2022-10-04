@@ -30,6 +30,7 @@ public class Post {
         this.fuels = fuels;
     }
 
+
     @Override
     public String toString() {
         return "Post{" +
